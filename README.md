@@ -26,8 +26,11 @@ We have filtered the dataset to include only the trips taken by yellow taxis in 
 
 ## Data Cleaning
 
+![Negative total amount values](images/Negative total amount values.png)
+ 
+**Negative total amount values**: The minimum total fare recorded is -$362.80, which doesn't make sense in practical terms because a fare shouldn't be negative. This could be due to data entry errors or some kind of adjustment or refund. Other negative values appeared on the plot, therefore we removed the negative total amount values. We also removed the Zero values.
 
-**Negative total amount values**: The minimum total fare recorded is -$362.80, which doesn't make sense in practical terms because a fare shouldn't be negative. This could be due to data entry errors or some kind of adjustment or refund. Other negative values appeared on the plot, therefore we removed the negative total amount values.
+
 
 
 
