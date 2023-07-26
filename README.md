@@ -13,7 +13,7 @@ This project can help solve this problem. By identifying the areas of the city t
 
 ## Tools
 
-The project was implemented using Python and a number of its data science and machine learning libraries, including NumPy, pandas for data handling, Matplotlib, and seaborn for data visualization, scikit-learn for model building and evaluation, and others for various stages of the project.
+The project was implemented using **Python** and a number of its data science and machine learning libraries, including **NumPy, pandas for data handling**, **Matplotlib, and seaborn for data visualization**, **scikit-learn for model building and evaluation**, and others for various stages of the project.
 
 ## Dataset
 The dataset used in this project is publicly available on the **TLC website and contains more than 1.1 billion taxi trips taken in New York City between 2009 and 2019**. The data for this project was obtained from the [TLC Trip Record Data](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
@@ -21,7 +21,7 @@ The dataset used in this project is publicly available on the **TLC website and 
 The dataset includes information on trip distance, pickup and drop-off locations, fare amount, and other trip details.The detailed explanation about each column present in the dataset can be found in the [data dictionary](https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf).
 
 
-We have filtered the dataset to include only the trips taken by yellow taxis in **January 2019**, which resulted in a dataset with **more than 8 million records**.
+We have filtered the dataset to include only the trips taken by yellow taxis in **January 2019**, which resulted in a dataset with **more than 7 million records**.
 
 
 ## Data Cleaning
@@ -98,7 +98,52 @@ Several machine learning algorithms were tested in the project, including **Deci
 
 In the course of this project, I tested four different types of algorithms: **Decision Trees**, **Random Forest**, **Gradient Boosting** and **K-Nearest Regression**. Each of these algorithms approaches the problem in a slightly different way, which can lead to different results. 
 
-The first model I built, also known as the **Benchmark model, used a Decision Tree algorithm**. In this initial model, I only included the **original features provided in the dataset, as listed earlier**. After setting this benchmark, I then implemented  **Decision Trees** again and  ** 3 other models such as Random Forest, Gradient Boosting and KNN- Regression**, but they all were enhanced! For these, I included not just the original data features, but also **additional features (using Feature Engineering)**  that I created myself to provide more insights. By comparing the results from the benchmark model to these enhanced models, I could see how much these extra features improved my predictions. Results are shown below:
+The first model I built, also known as the **Benchmark model, used a Decision Tree algorithm**. In this initial model, I only included the **original features provided in the dataset, as listed earlier**. After setting this benchmark, I then implemented  **Decision Tree** again and  3 other models such as **Random Forest, Gradient Boosting and KNN- Regression**, but they all were enhanced! For these, I included not just the original data features, but also **additional features (using Feature Engineering)**  that I created myself to provide more insights. By comparing the results from the benchmark model to these enhanced models, I could see how much these extra features improved my predictions. Results are shown below:
+
+![Results](images/results1.PNG) 
+
+
+We tested several models to predict taxi demand. **The Random Forest model, which used all original and new features, performed the best. It made the smallest errors, explained the most variability, and had the strongest correlation between predicted and actual values**. **The K-Nearest Regression model** performed the worst on all metrics. The other models, including **Decision Tree** and **Gradient Boosting**, performed better than our initial benchmark model but not as well as the **Random Forest model**.
+
+
+The **Random Forest model** is selected to be **tuned**. Here are the best parameter values:
+
+ N_estimators at 1800,  min_samples_split: at 2,  min_samples_leaf at  4,  max_features set to sqrt,  max_depth at  300 and  bootstrap set to True
+
+I've decided to choose the parameter values that resulted in the **third-best performance**, as they were quite close to the best performance but **required fewer estimators, making the model more efficient**. These parameters are: 
+
+n_estimators at 200, min_samples_split at 10, min_samples_leaf at 2, max_features set to 'sqrt', max_depth at 150, and bootstrap set to True. 
+
+Although the model with the highest number of estimators (n_estimators) performed slightly better, the increase in computational complexity wasn't worth the relatively minor improvement in performance.
+
+The final results are shown below:
+
+![Results](images/results2.PNG) 
+
+
+
+1. **Decision Tree (Benchmark Model)**: This was our baseline model, built using a decision tree algorithm and only the original features. It had the second highest errors across MAE, MSE, and RMSE, and the lowest R2 and correlation values, showing room for improvement.
+
+2. **Decision Tree**: By adding new features into this decision tree model, we reduced the errors across all three metrics compared to the benchmark model and increased the R2 and correlation, showing that the model is better at predicting taxi trip duration.
+
+3. **Random Forest**: This model significantly reduced errors and increased the R2 and correlation values compared to both decision tree models, making it a much better model for prediction.
+
+4. **Gradient Boosting**: While this model performed better than both decision tree models, it didn't outperform the random forest model. However, it still has a good balance between error reduction and model complexity.
+
+5. **K-Nearest Regression**: This model didn't perform as well as we hoped. It had the highest errors and lowest R2 and correlation values, making it the least accurate model for our data.
+
+6. **Tuned Random Forest**: The best performing model was the tuned random forest model, with the lowest errors and highest R2 and correlation values. This indicates that this model is the most accurate at predicting taxi trip duration from the data provided.
+
+
+## What's Next? (Future Work)
+
+There is always room for improvement in any data science project. For future work, we might look at adding more information to our dataset, possibly using data from other sources. We could also try out different types of models or play around with the settings of our current models to see if we can improve their performance. One exciting idea could be to put our model into a web app or something similar, so it's easier for others to use.
+
+Just a reminder - all our work so far is based on data for yellow taxi rides from **January 2009**. So, another thing we could do is to use data from different months or years. That way, our model could learn from more varied data and hopefully do a better job at predicting taxi fares.
+
+
+
+
 
 
 
