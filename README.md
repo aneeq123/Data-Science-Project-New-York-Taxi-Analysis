@@ -135,6 +135,13 @@ The final results are shown below:
 6. **Tuned Random Forest**: The best performing model was the tuned random forest model, with the lowest errors and highest R2 and correlation values. This indicates that this model is the most accurate at predicting taxi trip duration from the data provided.
 
 
+   Here is the correlation between True and Predicted value plot for the tuned random forest model. X-axis is the true values and y-axis the predicted values.
+
+   ![Results](images/results2.PNG) 
+
+
+
+
 ## What's Next? (Future Work)
 
 There is always room for improvement in any data science project. For future work, we might look at adding more information to our dataset, possibly using data from other sources. We could also try out different types of models or play around with the settings of our current models to see if we can improve their performance. One exciting idea could be to put our model into a web app or something similar, so it's easier for others to use.
