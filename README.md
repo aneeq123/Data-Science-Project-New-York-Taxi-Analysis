@@ -135,9 +135,9 @@ The final results are shown below:
 6. **Tuned Random Forest**: The best performing model was the tuned random forest model, with the lowest errors and highest R2 and correlation values. This indicates that this model is the most accurate at predicting taxi trip duration from the data provided.
 
 
-   Here is the correlation between True and Predicted value plot for the tuned random forest model. X-axis is the true values and y-axis the predicted values.
+Here is the correlation between True and Predicted value plot for the tuned random forest model. X-axis is the true values and y-axis the predicted values.
 
-   ![Results](images/results2.PNG) 
+   ![valuesplot](images/valuesplot.PNG) 
 
 
 
